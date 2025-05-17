@@ -1,0 +1,51 @@
+/* src/components/leaderboards/TotalDogboneLeaderboard.css */
+.total-leaderboard {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  padding: 20px;
+  max-width: 400px;
+  margin: 0 auto 30px;
+  text-align: center;
+}
+
+.total-leaderboard h2 {
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.total-leaderboard ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.total-leaderboard li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  border-bottom: 1px solid #eee;
+  font-size: 1.1rem;
+}
+
+.total-leaderboard .rank {
+  font-weight: bold;
+  color: #444;
+  width: 50px;
+}
+
+.total-leaderboard .name {
+  flex: 1;
+  text-align: left;
+  padding-left: 8px;
+  color: #555;
+}
+
+.total-leaderboard .score {
+  font-weight: 600;
+  color: #222;
+  width: 80px;
+  text-align: right;
+}
