@@ -1,0 +1,20 @@
+/* src/components/DogboneArcade/mini-games/DockDiving.css */
+
+.dock-diving {
+  padding: 40px;
+  font-family: monospace;
+  background: #f0f0f0;
+  min-height: 100vh;
+  text-align: center;
+  color: #222;
+}
+
+.dock-diving h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.dock-diving p {
+  font-size: 1.2rem;
+  color: #666;
+}

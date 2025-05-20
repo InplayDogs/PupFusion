@@ -1,0 +1,92 @@
+/* src/pages/Dashboard.css */
+
+.dashboard {
+  padding: 40px;
+  font-family: monospace;
+  min-height: 100vh;
+  background: repeating-linear-gradient(
+    45deg,
+    #e0e0e0,
+    #e0e0e0 20px,
+    #d1d1d1 20px,
+    #d1d1d1 40px
+  );
+  color: #222;
+}
+
+.toast {
+  background: #333;
+  color: white;
+  padding: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  border-radius: 6px;
+}
+
+.stats-bar {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+.dog-profile {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.dashboard-dog {
+  width: 120px;
+  filter: grayscale(100%);
+  margin: 10px 0;
+}
+
+.care-actions,
+.explore-link,
+.doghouse-link,
+.arcade-link,
+.fusion-link,
+.portfolio-link {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.care-actions h3,
+.explore-link h3,
+.doghouse-link h3,
+.arcade-link h3,
+.fusion-link h3,
+.portfolio-link h3 {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.care-actions button,
+.explore-link button,
+.doghouse-link button,
+.arcade-link button,
+.fusion-link button,
+.portfolio-link button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-family: monospace;
+}
+
+.care-actions button:disabled {
+  background: #999;
+  cursor: not-allowed;
+}

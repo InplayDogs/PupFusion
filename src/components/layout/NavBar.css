@@ -1,37 +1,51 @@
 /* src/components/layout/NavBar.css */
 .nav-bar {
-  background-color: #2d2f36;
-  padding: 12px 24px;
+  background-color: #222;
+  color: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: white;
+  padding: 12px 24px;
+  border-bottom: 2px solid #444;
 }
 
-.nav-logo a {
-  color: #ffffff;
-  font-size: 1.2rem;
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
+.nav-logo {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.nav-title {
+  font-size: 1.5rem;
   font-weight: bold;
-  text-decoration: none;
+  letter-spacing: 1px;
+  font-family: monospace;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
   gap: 20px;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links li a {
-  color: #dddddd;
+  color: #ccc;
   text-decoration: none;
-  font-size: 1rem;
-}
-
-.nav-links li a:hover {
-  color: #ffffff;
+  font-weight: bold;
+  font-family: monospace;
 }
 
 .nav-links li.active a {
-  color: #4f46e5;
-  font-weight: bold;
+  color: #ffd700;
+  border-bottom: 2px solid #ffd700;
+}
+
+.nav-links li a:hover {
+  color: white;
 }

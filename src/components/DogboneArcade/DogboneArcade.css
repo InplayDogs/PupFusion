@@ -1,42 +1,78 @@
 /* src/components/DogboneArcade/DogboneArcade.css */
-.dogbone-arcade-page {
-  padding: 32px;
+
+.arcade-container {
+  padding: 30px;
+  font-family: monospace;
   text-align: center;
-  background-color: #fefefe;
+  background: #f2f2f2;
+  min-height: 100vh;
+  color: #333;
 }
 
-h1 {
-  font-size: 2rem;
-  color: #222;
-  margin-bottom: 24px;
+.arcade-header {
+  margin-bottom: 30px;
 }
 
-.game-links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
-  margin-bottom: 40px;
+.arcade-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-.arcade-button {
-  display: inline-block;
-  padding: 12px 24px;
-  background-color: #4f46e5;
-  color: white;
-  font-size: 1rem;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: background-color 0.2s ease;
-}
-
-.arcade-button:hover {
-  background-color: #3730a3;
-}
-
-.arcade-leaderboards {
+.arcade-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  padding: 16px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
   align-items: center;
+  transition: transform 0.2s;
+}
+
+.arcade-card:hover {
+  transform: translateY(-4px);
+}
+
+.arcade-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  background: #ccc;
+}
+
+.arcade-card h3 {
+  font-size: 1.1rem;
+  margin: 8px 0;
+}
+
+.arcade-card p {
+  font-size: 0.95rem;
+  margin: 4px 0 12px;
+  color: #666;
+}
+
+.arcade-card button {
+  padding: 10px 20px;
+  font-family: monospace;
+  font-weight: bold;
+  background: #222;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.arcade-card button:hover {
+  background: #444;
+}
+
+.arcade-card button:disabled {
+  background: #999;
+  cursor: not-allowed;
 }

@@ -1,0 +1,40 @@
+/* src/pages/FusionReactor.css */
+
+.fusion-reactor {
+  padding: 40px;
+  text-align: center;
+  font-family: monospace;
+  background: repeating-linear-gradient(
+    45deg,
+    #e0e0e0,
+    #e0e0e0 20px,
+    #d1d1d1 20px,
+    #d1d1d1 40px
+  );
+  color: #222;
+  min-height: 100vh;
+  filter: grayscale(100%);
+}
+
+.fusion-header {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.fusion-description {
+  max-width: 600px;
+  margin: 0 auto 30px;
+  font-size: 1.1rem;
+  color: #444;
+}
+
+.fusion-placeholder {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  border: 2px dashed #999;
+  max-width: 400px;
+  margin: 0 auto;
+  color: #555;
+  font-style: italic;
+}

@@ -31,7 +31,7 @@ const Login = () => {
         if (!user.emailVerified) {
           setMessage("Please verify your email before continuing.");
         } else {
-          navigate("/"); // or "/dashboard" if that's your homepage
+          navigate("/dashboard");
         }
       } else {
         const { user } = await createUserWithEmailAndPassword(auth, email, password);
@@ -66,7 +66,7 @@ const Login = () => {
         <button type="submit">{isLogin ? "Log In" : "Create Account"}</button>
       </form>
 
-      {message && <p className={message.includes("verify") ? "" : "error-message"}>{message}</p>}
+      <p style={{ color: "lime", marginTop: "10px" }}>{message}</p>
 
       <button onClick={toggleMode} style={{ marginTop: "10px", textDecoration: "underline" }}>
         {isLogin ? "Need an account? Sign Up" : "Already have an account? Log In"}

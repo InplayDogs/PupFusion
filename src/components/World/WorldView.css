@@ -1,0 +1,71 @@
+/* src/components/World/WorldView.css */
+
+.world-view {
+  padding: 40px;
+  text-align: center;
+  min-height: 100vh;
+  font-family: monospace;
+  background: linear-gradient(
+    to bottom,
+    #eeeeee 14.28%,  /* red stripe placeholder */
+    #dddddd 14.28%, #dddddd 28.56%,  /* blue */
+    #cccccc 28.56%, #cccccc 42.84%,  /* yellow */
+    #bbbbbb 42.84%, #bbbbbb 57.12%,  /* orange */
+    #aaaaaa 57.12%, #aaaaaa 71.4%,   /* green */
+    #999999 71.4%, #999999 85.68%,   /* purple */
+    #888888 85.68%, #888888 100%     /* indigo */
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.dog-container {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.pixel-dog {
+  width: 120px;
+  animation: tailwag 1s infinite alternate;
+  cursor: pointer;
+}
+
+@keyframes tailwag {
+  0% { transform: rotate(-2deg); }
+  100% { transform: rotate(2deg); }
+}
+
+.intro {
+  font-size: 1.2rem;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 8px;
+  font-family: monospace;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.intro button {
+  margin-top: 12px;
+  padding: 10px 20px;
+  font-weight: bold;
+  font-family: monospace;
+  background: #222;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: 100%;
+  max-width: 240px;
+}
+
+.intro button:hover {
+  background: #444;
+}

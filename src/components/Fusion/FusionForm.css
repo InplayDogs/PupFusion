@@ -1,0 +1,55 @@
+/* src/components/Fusion/FusionForm.css */
+
+.fusion-form {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+  max-width: 500px;
+  margin: 30px auto;
+  text-align: center;
+  font-family: monospace;
+}
+
+.fusion-form h3 {
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+}
+
+.fusion-inputs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.fusion-inputs select {
+  padding: 8px 12px;
+  font-family: monospace;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.fusion-inputs .plus {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #444;
+}
+
+.fusion-form button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background: #222;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: monospace;
+}
+
+.fusion-form button:disabled {
+  background: #777;
+  cursor: not-allowed;
+}

@@ -1,0 +1,54 @@
+/* src/pages/NameYourDog.css */
+
+.name-your-dog {
+  padding: 40px;
+  font-family: monospace;
+  background: #f2f2f2;
+  color: #222;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.name-your-dog h2 {
+  margin-bottom: 20px;
+  font-size: 1.6rem;
+}
+
+.name-your-dog input {
+  padding: 12px;
+  font-size: 1rem;
+  font-family: monospace;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 20px;
+}
+
+.name-your-dog button {
+  padding: 12px 24px;
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 1rem;
+  background: #222;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.name-your-dog button:hover {
+  background: #444;
+}
+
+.error-message {
+  margin-top: 12px;
+  color: crimson;
+  font-size: 0.9rem;
+  font-family: monospace;
+}

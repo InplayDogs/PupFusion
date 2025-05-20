@@ -1,0 +1,103 @@
+/* src/pages/Doghouse.css */
+
+.doghouse-container {
+  padding: 40px;
+  font-family: monospace;
+  background: repeating-linear-gradient(
+    45deg,
+    #e0e0e0,
+    #e0e0e0 20px,
+    #d1d1d1 20px,
+    #d1d1d1 40px
+  );
+  min-height: 100vh;
+  text-align: center;
+  filter: grayscale(100%);
+}
+
+.doghouse-container h2 {
+  font-size: 1.6rem;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.doghouse-bed {
+  background: white;
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.doghouse-trophy {
+  background: white;
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.doghouse-rename {
+  background: white;
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.doghouse-section h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.doghouse-section p,
+.doghouse-bed p,
+.doghouse-trophy p,
+.doghouse-rename p {
+  font-size: 1rem;
+  color: #333;
+}
+
+.doghouse-rename input {
+  padding: 10px;
+  font-size: 1rem;
+  font-family: monospace;
+  margin-bottom: 10px;
+  width: 80%;
+  border-radius: 6px;
+  border: 1px solid #aaa;
+}
+
+.doghouse-rename button {
+  display: block;
+  margin: 10px auto 0;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-family: monospace;
+  background: #222;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.doghouse-rename button:hover {
+  background: #000;
+}
+
+.doghouse-trophy ul {
+  list-style: none;
+  padding: 0;
+}
+
+.doghouse-trophy li {
+  font-size: 0.95rem;
+  padding: 5px 0;
+  border-bottom: 1px dashed #ccc;
+}

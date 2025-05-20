@@ -1,0 +1,55 @@
+/* src/components/World/CollarInventory.css */
+
+.collar-inventory {
+  text-align: center;
+  padding: 30px;
+  font-family: monospace;
+  background: repeating-linear-gradient(
+    45deg,
+    #e0e0e0,
+    #e0e0e0 20px,
+    #d1d1d1 20px,
+    #d1d1d1 40px
+  );
+  min-height: 100vh;
+}
+
+.collar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 24px;
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.collar-slot {
+  padding: 10px;
+  border: 2px solid #999;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.collar-slot:hover {
+  transform: scale(1.05);
+}
+
+.collar-slot img {
+  width: 100%;
+  height: auto;
+  max-height: 80px;
+  object-fit: contain;
+}
+
+.collar-slot p {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.grayscale {
+  filter: grayscale(100%);
+  opacity: 0.6;
+}
