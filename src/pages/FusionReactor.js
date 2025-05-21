@@ -1,74 +1,47 @@
 // src/pages/FusionReactor.js
-import React, { useState } from 'react';
+import React from 'react';
 import './FusionReactor.css';
-import { getAuth } from 'firebase/auth';
-import { doc, getDoc, updateDoc } from 'firebase/firestore';
-import { db } from '../firebaseConfig';
-import Toast from '../components/Toast';
+import reactorImage from '../assets/reactor-cartoon.png';
 
 const FusionReactor = () => {
-  const [input1, setInput1] = useState('');
-  const [input2, setInput2] = useState('');
-  const [result, setResult] = useState('');
-  const [toastMessage, setToastMessage] = useState('');
-
-  const user = getAuth().currentUser;
-  const userRef = user ? doc(db, 'users', user.uid) : null;
-
-  const fusionTable = {
-    redblue: 'purple',
-    bluered: 'purple',
-    blueyellow: 'green',
-    yellowblue: 'green',
-    redyellow: 'orange',
-    yellowred: 'orange',
+  // Simulated unlock state — replace with Firebase data later
+  const foundColors = {
+    red: true,
+    blue: true,
+    yellow: true,
+    green: true,
+    orange: false,
+    purple: false,
+    indigo: false,
   };
 
-  const handleFusion = async () => {
-    if (!input1 || !input2) return;
-
-    const key = input1 + input2;
-    const fusionResult = fusionTable[key];
-    if (!fusionResult) {
-      setToastMessage('Invalid fusion combination');
-      return;
-    }
-
-    setResult(fusionResult);
-    setToastMessage(`You discovered ${fusionResult.charAt(0).toUpperCase() + fusionResult.slice(1)}!`);
-
-    if (userRef) {
-      const docSnap = await getDoc(userRef);
-      const existingColors = docSnap.exists() ? docSnap.data().colorsUnlocked || [] : [];
-
-      if (!existingColors.includes(fusionResult)) {
-        await updateDoc(userRef, {
-          colorsUnlocked: [...existingColors, fusionResult],
-        });
-      }
-    }
-  };
+  const allColorsFound = Object.values(foundColors).every(Boolean);
 
   return (
-    <div className="fusion-container">
-      <h1>Fusion Reactor</h1>
-      <div className="fusion-inputs">
-        <select value={input1} onChange={(e) => setInput1(e.target.value)}>
-          <option value="">Select First Collar</option>
-          <option value="red">Red</option>
-          <option value="blue">Blue</option>
-          <option value="yellow">Yellow</option>
-        </select>
-        <select value={input2} onChange={(e) => setInput2(e.target.value)}>
-          <option value="">Select Second Collar</option>
-          <option value="red">Red</option>
-          <option value="blue">Blue</option>
-          <option value="yellow">Yellow</option>
-        </select>
+    <div className="fusion-reactor-page">
+      <div className="fusion-header">
+        <h1>Fusion Reactor</h1>
+        <p>
+          Welcome to the Fusion Reactor — where you mix and match collars to unlock the full spectrum of color.
+        </p>
       </div>
-      <button onClick={handleFusion}>Fuse</button>
-      {result && <div className="fusion-result">Result: {result.toUpperCase()}</div>}
-      {toastMessage && <Toast message={toastMessage} onClose={() => setToastMessage('')} />}
+
+      <div className="fusion-image-wrapper">
+        <img src={reactorImage} alt="Fusion Reactor" className="fusion-image" />
+        {Object.entries(foundColors).map(([color, isFound]) => (
+          <div key={color} className={`reactor-light ${color} ${isFound ? 'active' : ''}`} />
+        ))}
+        {allColorsFound && <div className="reactor-light rainbow active" />}
+      </div>
+
+      <div className="fusion-description">
+        <p>
+          Start with <strong>Red</strong>, <strong>Blue</strong>, and <strong>Yellow</strong>. Fuse them to discover
+          <strong> Green</strong>, <strong>Orange</strong>, <strong>Purple</strong>, and <strong>Indigo</strong>.
+          <br /><br />
+          When all seven are created, you'll unlock the power of the Rainbow — and discover what's beyond!
+        </p>
+      </div>
     </div>
   );
 };

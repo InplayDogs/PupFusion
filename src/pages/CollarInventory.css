@@ -1,0 +1,66 @@
+/* CollarInventory.css */
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+.collar-inventory {
+  text-align: center;
+  padding: 2rem;
+  background: repeating-linear-gradient(
+    to bottom,
+    #444 0px,
+    #444 36px,
+    #555 36px,
+    #555 72px,
+    #666 72px,
+    #666 108px,
+    #777 108px,
+    #777 144px,
+    #888 144px,
+    #888 180px,
+    #999 180px,
+    #999 216px,
+    #aaa 216px,
+    #aaa 252px
+  );
+  color: white;
+  font-family: 'VT323', monospace;
+  min-height: 100vh;
+}
+
+.collar-inventory h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.collar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+.collar-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+  border: 2px solid white;
+  border-radius: 8px;
+}
+
+.collar-card img {
+  width: 80px;
+  height: auto;
+  image-rendering: pixelated;
+  margin-bottom: 0.5rem;
+  transition: filter 0.2s ease-in-out;
+}
+
+.collar-card img.grayscale {
+  filter: grayscale(100%);
+  opacity: 0.4;
+}
+
+.collar-label {
+  font-size: 1rem;
+}

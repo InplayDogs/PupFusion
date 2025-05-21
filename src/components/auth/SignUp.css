@@ -1,0 +1,78 @@
+.signup-container {
+  max-width: 400px;
+  margin: auto;
+  background-color: #111;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 10px #00ff00;
+  text-align: center;
+}
+
+.signup-container h2 {
+  margin-bottom: 1.5rem;
+  color: #00ff00;
+}
+
+.signup-form label {
+  display: block;
+  margin-bottom: 1rem;
+  color: #00ff00;
+  font-size: 1.1rem;
+  text-align: left;
+}
+
+.signup-form input {
+  width: 100%;
+  padding: 0.5rem;
+  font-family: 'VT323', monospace;
+  font-size: 1.1rem;
+  border: 1px solid #00ff00;
+  border-radius: 6px;
+  background-color: black;
+  color: #00ff00;
+}
+
+.wallet-placeholder {
+  margin: 1.5rem 0;
+  color: #666;
+  font-style: italic;
+}
+
+.wallet-connect-btn {
+  padding: 0.7rem 1.2rem;
+  background-color: #004400;
+  border: 1px solid #00cc00;
+  color: #00ff00;
+  cursor: not-allowed;
+  font-family: 'VT323', monospace;
+  font-size: 1rem;
+  border-radius: 6px;
+}
+
+.signup-submit-btn {
+  width: 100%;
+  padding: 1rem;
+  background-color: #00ff00;
+  border: none;
+  color: black;
+  font-size: 1.3rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.signup-submit-btn:hover {
+  background-color: #00cc00;
+}
+
+.signup-message {
+  margin-top: 1rem;
+  color: lime;
+  font-weight: bold;
+}
+
+.signup-error {
+  margin-top: 1rem;
+  color: #ff5555;
+  font-weight: bold;
+}

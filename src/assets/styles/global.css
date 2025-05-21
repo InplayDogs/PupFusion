@@ -1,0 +1,131 @@
+/* GLOBAL SITE STYLE */
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+/* UNIVERSAL RESET + FONT */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'VT323', monospace;
+}
+
+body {
+  background-color: black;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* WORLDVIEW PAGE: Grayscale Rainbow with 200px stripes */
+body.worldview-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: repeating-linear-gradient(
+    45deg,
+    #444 0px,
+    #444 200px,
+    #555 200px,
+    #555 400px,
+    #666 400px,
+    #666 600px,
+    #777 600px,
+    #777 800px,
+    #888 800px,
+    #888 1000px,
+    #999 1000px,
+    #999 1200px,
+    #aaa 1200px,
+    #aaa 1400px
+  );
+  opacity: 0.5;
+  transition: all 0.5s ease-in-out;
+}
+
+/* GENERAL BACKGROUND: Rainbow Effect with Random Rotation (For all other pages) */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: repeating-linear-gradient(
+    45deg,
+    #444 0px,
+    #444 200px,
+    #555 200px,
+    #555 400px,
+    #666 400px,
+    #666 600px,
+    #777 600px,
+    #777 800px,
+    #888 800px,
+    #888 1000px,
+    #999 1000px,
+    #999 1200px,
+    #aaa 1200px,
+    #aaa 1400px
+  );
+  opacity: 0.5;
+  transition: all 0.5s ease-in-out;
+  transform: rotate(calc(45deg + (Math.random() * 90 - 45))); /* Random rotation between 0deg and 90deg */
+}
+
+/* COLOR HIGHLIGHT STATES */
+body.highlight-red::before    { background-image: repeating-linear-gradient(45deg, #ff0000 0px, #ff0000 200px, #ff5555 200px, #ff5555 400px, #ff9999 400px, #ff9999 600px, #ffcccc 600px, #ffcccc 800px, #ffdddd 800px, #ffdddd 1000px, #ffeeee 1000px, #ffeeee 1200px); }
+body.highlight-blue::before   { background-image: repeating-linear-gradient(45deg, #0000ff 0px, #0000ff 200px, #5555ff 200px, #5555ff 400px, #9999ff 400px, #9999ff 600px, #ccccff 600px, #ccccff 800px, #ddddff 800px, #ddddff 1000px, #eeeeff 1000px, #eeeeff 1200px); }
+body.highlight-yellow::before { background-image: repeating-linear-gradient(45deg, #ffff00 0px, #ffff00 200px, #ffff55 200px, #ffff55 400px, #ffff99 400px, #ffff99 600px, #ffffcc 600px, #ffffcc 800px, #ffffdd 800px, #ffffdd 1000px, #ffffee 1000px, #ffffee 1200px); }
+body.highlight-green::before  { background-image: repeating-linear-gradient(45deg, #00ff00 0px, #00ff00 200px, #55ff55 200px, #55ff55 400px, #99ff99 400px, #99ff99 600px, #ccffcc 600px, #ccffcc 800px, #ddffdd 800px, #ddffdd 1000px, #eeffee 1000px, #eeffee 1200px); }
+body.highlight-orange::before { background-image: repeating-linear-gradient(45deg, #ffa500 0px, #ffa500 200px, #ffb366 200px, #ffb366 400px, #ffcc99 400px, #ffcc99 600px, #ffddcc 600px, #ffddcc 800px, #ffeecc 800px, #ffeecc 1000px, #ffeeee 1000px, #ffeeee 1200px); }
+body.highlight-purple::before { background-image: repeating-linear-gradient(45deg, #800080 0px, #800080 200px, #b366b3 200px, #b366b3 400px, #cc99cc 400px, #cc99cc 600px, #ddccdd 600px, #ddccdd 800px, #e6ccff 800px, #e6ccff 1000px, #f2ccff 1000px, #f2ccff 1200px); }
+
+/* HEADINGS & TEXT */
+h1, h2, h3, h4, h5, h6 {
+  color: #00ff00;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+/* BUTTONS */
+button {
+  padding: 1rem 2rem;
+  background-color: #00ff00;
+  color: black;
+  border: none;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+}
+
+button:hover {
+  background-color: #00cc00;
+}
+
+/* LINKS */
+a {
+  color: #00ff00;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

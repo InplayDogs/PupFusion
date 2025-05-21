@@ -1,40 +1,93 @@
-/* src/pages/FusionReactor.css */
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
-.fusion-reactor {
-  padding: 40px;
+.fusion-reactor-page {
   text-align: center;
-  font-family: monospace;
   background: repeating-linear-gradient(
-    45deg,
-    #e0e0e0,
-    #e0e0e0 20px,
-    #d1d1d1 20px,
-    #d1d1d1 40px
+    to right,
+    #444 0px,
+    #444 36px,
+    #555 36px,
+    #555 72px,
+    #666 72px,
+    #666 108px,
+    #777 108px,
+    #777 144px,
+    #888 144px,
+    #888 180px,
+    #999 180px,
+    #999 216px,
+    #aaa 216px,
+    #aaa 252px
   );
-  color: #222;
+  color: white;
+  font-family: 'VT323', monospace;
+  padding: 2rem;
   min-height: 100vh;
-  filter: grayscale(100%);
 }
 
 .fusion-header {
-  font-size: 2rem;
-  margin-bottom: 20px;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+}
+
+.fusion-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.fusion-header p {
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
+
+.fusion-image-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+
+.fusion-image {
+  width: 300px;
+  max-width: 100%;
+  display: block;
+}
+
+.reactor-light {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  filter: blur(2px);
+}
+
+.reactor-light.red { top: 20%; left: 30%; background: red; }
+.reactor-light.blue { top: 20%; left: 60%; background: blue; }
+.reactor-light.yellow { top: 40%; left: 45%; background: yellow; }
+.reactor-light.green { top: 55%; left: 30%; background: green; }
+.reactor-light.orange { top: 55%; left: 60%; background: orange; }
+.reactor-light.purple { top: 70%; left: 40%; background: purple; }
+.reactor-light.indigo { top: 70%; left: 50%; background: indigo; }
+
+.reactor-light.rainbow {
+  width: 32px;
+  height: 32px;
+  top: 50%;
+  left: 48%;
+  background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet);
+  border: 2px solid white;
+  border-radius: 50%;
+}
+
+.reactor-light.active {
+  opacity: 1;
+  box-shadow: 0 0 12px 4px currentColor;
 }
 
 .fusion-description {
-  max-width: 600px;
-  margin: 0 auto 30px;
-  font-size: 1.1rem;
-  color: #444;
-}
-
-.fusion-placeholder {
-  background: white;
-  padding: 30px;
-  border-radius: 12px;
-  border: 2px dashed #999;
-  max-width: 400px;
+  max-width: 700px;
   margin: 0 auto;
-  color: #555;
-  font-style: italic;
+  font-size: 1.25rem;
+  line-height: 1.6;
 }

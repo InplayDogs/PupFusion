@@ -1,41 +1,47 @@
 // src/components/layout/NavBar.js
-import React from "react";
-import { Link, useLocation } from "react-router-dom";
-import logo from "../../assets/logos/pupfusion-logo.png";
-import "./NavBar.css";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './NavBar.css';
+import logo from '../../assets/logos/pupfusion-logo2.png'; // Updated logo path
+import { auth } from '../../firebaseConfig';
+import { signOut } from 'firebase/auth';
+import useAuth from '../../hooks/useAuth'; // Import useAuth hook
 
 const NavBar = () => {
-  const location = useLocation();
+  const user = useAuth(); // Get current user from useAuth
+
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+      window.location.href = '/login'; // Redirect to login page after logout
+    } catch (error) {
+      console.error("Logout Error:", error);
+    }
+  };
 
   return (
-    <nav className="nav-bar">
-      <div className="nav-left">
-        <img src={logo} alt="PupFusion Logo" className="nav-logo" />
-        <span className="nav-title">PupFusion</span>
+    <nav className="navbar">
+      <Link to="/" className="navbar-logo">
+        <img src={logo} alt="PupFusion Logo" className="logo-icon" />
+        PupFusion
+      </Link>
+      <div className="navbar-links">
+        <Link to="/dashboard">Dashboard</Link>
+        <Link to="/fusion">Fusion</Link>
+        <Link to="/inventory">Inventory</Link>
+        <Link to="/doghouse">Doghouse</Link>
+        <Link to="/arcade">Arcade</Link>
+        <Link to="/explore">Explore</Link>
       </div>
-      <ul className="nav-links">
-        <li className={location.pathname === "/dashboard" ? "active" : ""}>
-          <Link to="/dashboard">Dashboard</Link>
-        </li>
-        <li className={location.pathname === "/doghouse" ? "active" : ""}>
-          <Link to="/doghouse">Doghouse</Link>
-        </li>
-        <li className={location.pathname === "/dogbone-arcade" ? "active" : ""}>
-          <Link to="/dogbone-arcade">Arcade</Link>
-        </li>
-        <li className={location.pathname === "/fusion" ? "active" : ""}>
-          <Link to="/fusion">Fusion</Link>
-        </li>
-        <li className={location.pathname === "/inventory" ? "active" : ""}>
-          <Link to="/inventory">Inventory</Link>
-        </li>
-        <li className={location.pathname === "/portfolio" ? "active" : ""}>
-          <Link to="/portfolio">Portfolio</Link>
-        </li>
-        <li className={location.pathname.startsWith("/explore") ? "active" : ""}>
-          <Link to="/explore">Explore</Link>
-        </li>
-      </ul>
+      <div className="navbar-login">
+        {user ? (
+          <button onClick={handleLogout} className="login-button">
+            Log Out
+          </button>
+        ) : (
+          <Link to="/login" className="login-button">Log In</Link>
+        )}
+      </div>
     </nav>
   );
 };

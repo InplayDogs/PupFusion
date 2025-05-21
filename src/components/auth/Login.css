@@ -1,54 +1,75 @@
 /* src/components/auth/Login.css */
 
-.auth-form {
-  max-width: 400px;
-  margin: 60px auto;
-  background: #fff;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-  font-family: monospace;
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #111;
+  color: white;
+  padding: 4rem 2rem;
+  font-family: 'VT323', monospace;
+  min-height: 100vh;
 }
 
-.auth-form h2 {
-  margin-bottom: 20px;
-  font-size: 1.6rem;
-  color: #222;
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #00ff00; /* Neon green for header */
 }
 
-.auth-form input {
+.input-container {
+  margin-bottom: 1rem;
+}
+
+input {
   width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  font-family: monospace;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-}
-
-.auth-form button {
-  width: 100%;
-  padding: 12px;
-  margin-top: 10px;
-  font-family: monospace;
-  font-weight: bold;
+  padding: 1rem;
   background: #222;
   color: white;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+input:focus {
+  outline: none;
+  background: #333;
+}
+
+button.login-button {
+  padding: 1rem 3rem;
+  background-color: #00ff00;
+  color: black;
+  border: none;
+  font-size: 1.5rem;
   cursor: pointer;
-  transition: background 0.2s;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
 }
 
-.auth-form button:hover {
-  background: #444;
+button.login-button:hover {
+  background-color: #00cc00;  /* Green hover effect */
 }
 
-.auth-form p {
-  font-size: 0.9rem;
-  margin-top: 12px;
-  color: lime;
-  font-family: monospace;
-  white-space: pre-line;
+.error-message {
+  color: #ff0000;
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+.signup-link {
+  margin-top: 2rem;
+  font-size: 1rem;
+}
+
+.signup-link a {
+  color: #00ff00;
+  text-decoration: none;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
 }

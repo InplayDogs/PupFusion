@@ -1,52 +1,52 @@
-// src/App.js
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import NavBar from "./components/layout/NavBar";
-import Login from "./components/auth/Login";
-import Dashboard from "./pages/Dashboard";
-import DogboneArcade from "./components/DogboneArcade/DogboneArcade";
-import FetchFrenzy from "./components/DogboneArcade/mini-games/FetchFrenzy";
-import DigYard from "./components/DogboneArcade/mini-games/DigYard";
-import AlertDash from "./components/DogboneArcade/mini-games/AlertDash";
-import PackMemory from "./components/DogboneArcade/mini-games/PackMemory";
-import DockDiving from "./components/DogboneArcade/mini-games/DockDiving";
-import Doghouse from "./pages/Doghouse";
-import FusionReactor from "./pages/FusionReactor";
-import CollarInventory from "./components/World/CollarInventory";
-import ColorPortfolio from "./pages/ColorPortfolio";
-import WorldView from "./components/World/WorldView";
-import IntroSequence from "./pages/IntroSequence";
-import NameYourDog from "./pages/NameYourDog";
-import ExploreWorld from "./pages/ExploreWorld";
-import ForestWorld from "./pages/ForestWorld";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import "./App.css";
+// Import your pages
+import Dashboard from './pages/Dashboard';
+import FusionReactor from './pages/FusionReactor';
+import CollarInventory from './pages/CollarInventory';
+import Doghouse from './pages/Doghouse';
+import ExploreWorld from './pages/ExploreWorld';
+import Login from './components/auth/Login';
+import SignUp from './components/auth/SignUp';
+import IntroSequence from './pages/IntroSequence';
+import NameYourDog from './pages/NameYourDog';
 
-const App = () => {
+// Import the auth wrapper
+import RequireAuth from './components/auth/RequireAuth';
+
+// Import navigation
+import NavBar from './components/layout/NavBar';
+import WorldView from './components/World/WorldView';
+
+// Import Arcade
+import DogboneArcade from './components/DogboneArcade/DogboneArcade';
+
+// Import global CSS from the correct path
+import './assets/styles/global.css';
+
+function App() {
   return (
     <Router>
-      <NavBar />
+      <NavBar /> {/* NavBar always visible */}
       <Routes>
-        <Route path="/" element={<WorldView />} />
+        {/* Unauthenticated Routes */}
         <Route path="/login" element={<Login />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/dogbone-arcade" element={<DogboneArcade />} />
-        <Route path="/fetch-frenzy" element={<FetchFrenzy />} />
-        <Route path="/dig-yard" element={<DigYard />} />
-        <Route path="/alert-dash" element={<AlertDash />} />
-        <Route path="/pack-memory" element={<PackMemory />} />
-        <Route path="/dock-diving" element={<DockDiving />} />
-        <Route path="/doghouse" element={<Doghouse />} />
-        <Route path="/fusion" element={<FusionReactor />} />
-        <Route path="/inventory" element={<CollarInventory />} />
-        <Route path="/portfolio" element={<ColorPortfolio />} />
+        <Route path="/signup" element={<SignUp />} />
         <Route path="/intro-sequence" element={<IntroSequence />} />
         <Route path="/name-your-dog" element={<NameYourDog />} />
-        <Route path="/explore" element={<ExploreWorld />} />
-        <Route path="/explore/forest" element={<ForestWorld />} />
+
+        {/* Protected Routes */}
+        <Route path="/" element={<WorldView />} />
+        <Route path="/dashboard" element={<RequireAuth><Dashboard /></RequireAuth>} />
+        <Route path="/fusion" element={<RequireAuth><FusionReactor /></RequireAuth>} />
+        <Route path="/inventory" element={<RequireAuth><CollarInventory /></RequireAuth>} />
+        <Route path="/doghouse" element={<RequireAuth><Doghouse /></RequireAuth>} />
+        <Route path="/arcade" element={<RequireAuth><DogboneArcade /></RequireAuth>} />
+        <Route path="/explore" element={<RequireAuth><ExploreWorld /></RequireAuth>} />
       </Routes>
     </Router>
   );
-};
+}
 
 export default App;

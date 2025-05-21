@@ -1,54 +1,38 @@
-/* src/pages/NameYourDog.css */
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 .name-your-dog {
-  padding: 40px;
-  font-family: monospace;
-  background: #f2f2f2;
-  color: #222;
   text-align: center;
+  padding: 4rem 2rem;
+  font-family: 'VT323', monospace;
+  color: white;
+  background: black;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
-.name-your-dog h2 {
-  margin-bottom: 20px;
-  font-size: 1.6rem;
+.name-your-dog h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
 }
 
 .name-your-dog input {
-  padding: 12px;
-  font-size: 1rem;
-  font-family: monospace;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  width: 100%;
-  max-width: 300px;
-  margin-bottom: 20px;
+  font-size: 1.25rem;
+  padding: 0.5rem;
+  margin: 1rem;
+  background: #333;
+  color: white;
+  border: 1px solid white;
 }
 
 .name-your-dog button {
-  padding: 12px 24px;
-  font-family: monospace;
-  font-weight: bold;
-  font-size: 1rem;
-  background: #222;
-  color: white;
+  font-size: 1.25rem;
+  padding: 0.5rem 2rem;
+  background: #00ff00;
+  color: black;
   border: none;
-  border-radius: 6px;
   cursor: pointer;
-  transition: background 0.2s;
+  margin-top: 1rem;
 }
 
 .name-your-dog button:hover {
-  background: #444;
-}
-
-.error-message {
-  margin-top: 12px;
-  color: crimson;
-  font-size: 0.9rem;
-  font-family: monospace;
+  background: #00cc00;
 }

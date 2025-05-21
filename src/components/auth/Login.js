@@ -1,76 +1,64 @@
 // src/components/auth/Login.js
-import React, { useState } from "react";
-import { auth } from "../../firebaseConfig";
-import {
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  sendEmailVerification,
-} from "firebase/auth";
-import { useNavigate } from "react-router-dom";
-import "./Login.css";
+import React, { useState } from 'react';
+import { auth } from '../../firebaseConfig';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
+import './Login.css';
 
 const Login = () => {
-  const [isLogin, setIsLogin] = useState(true);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [message, setMessage] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [message, setMessage] = useState('');
   const navigate = useNavigate();
-
-  const toggleMode = () => {
-    setIsLogin(!isLogin);
-    setMessage("");
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setMessage("");
+    setMessage('');
 
     try {
-      if (isLogin) {
-        const { user } = await signInWithEmailAndPassword(auth, email, password);
-        if (!user.emailVerified) {
-          setMessage("Please verify your email before continuing.");
-        } else {
-          navigate("/dashboard");
-        }
-      } else {
-        const { user } = await createUserWithEmailAndPassword(auth, email, password);
-        await sendEmailVerification(user);
-        setMessage("Verification email sent. Please check your inbox.");
+      // Log email and password to check they're correctly passed
+      console.log('Logging in with:', email, password);
+
+      const { user } = await signInWithEmailAndPassword(auth, email, password);
+
+      if (user) {
+        console.log('User logged in:', user);
+        navigate('/dashboard');  // Redirect to dashboard or landing page
       }
     } catch (error) {
-      setMessage(error.message);
+      console.log('Login Error:', error);  // Log the error to see what went wrong
+      setMessage('Invalid credentials. Please try again.');
     }
   };
 
   return (
-    <div className="auth-form">
-      <h2>{isLogin ? "Log In" : "Sign Up"}</h2>
+    <div className="login-container">
+      <h2>Login to Your Account</h2>
       <form onSubmit={handleSubmit}>
-        <input
-          type="email"
-          placeholder="Email"
-          required
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-
-        <input
-          type="password"
-          placeholder="Password"
-          required
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-
-        <button type="submit">{isLogin ? "Log In" : "Create Account"}</button>
+        <div className="input-container">
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+        </div>
+        <div className="input-container">
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+        </div>
+        <button type="submit" className="login-button">Log In</button>
       </form>
-
-      <p style={{ color: "lime", marginTop: "10px" }}>{message}</p>
-
-      <button onClick={toggleMode} style={{ marginTop: "10px", textDecoration: "underline" }}>
-        {isLogin ? "Need an account? Sign Up" : "Already have an account? Log In"}
-      </button>
+      {message && <p className="error-message">{message}</p>}
+      <div className="signup-link">
+        <p>Don't have an account? <a href="/signup">Sign up</a></p>
+      </div>
     </div>
   );
 };
